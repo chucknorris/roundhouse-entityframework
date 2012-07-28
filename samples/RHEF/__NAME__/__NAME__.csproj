@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6FFB1930-80C3-4B7E-B4C8-8A610583E496}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>__NAME__</RootNamespace>
+    <AssemblyName>__NAME__</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EnsureThat">
+      <HintPath>..\packages\Ensure.That.0.5.0\lib\EnsureThat.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.3.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionVersion.cs">
+      <Link>Properties\SolutionVersion.cs</Link>
+    </Compile>
+    <Compile Include="Domain\BaseDomainObject.cs" />
+    <Compile Include="Domain\IDomainObject.cs" />
+    <Compile Include="Domain\SampleChildObject.cs" />
+    <Compile Include="Domain\SampleParentObject.cs" />
+    <Compile Include="Domain\SampleUser.cs" />
+    <Compile Include="Infrastructure\Services\BaseRepositoryService.cs" />
+    <Compile Include="Infrastructure\Services\IDateTimeService.cs" />
+    <Compile Include="Infrastructure\Services\IRepositoryService.cs" />
+    <Compile Include="Infrastructure\Logging\ILog.cs" />
+    <Compile Include="Infrastructure.App\ApplicationParameters.cs" />
+    <Compile Include="Infrastructure.App\Services\IUserRepositoryService.cs" />
+    <Compile Include="Infrastructure\Logging\Log.cs" />
+    <Compile Include="Infrastructure\Logging\NullLog.cs" />
+    <Compile Include="Infrastructure\Persistence\EntityFrameworkRepository.cs" />
+    <Compile Include="Infrastructure\Persistence\IRepository.cs" />
+    <Compile Include="Infrastructure\Logging\Log4NetLog.cs" />
+    <Compile Include="Infrastructure\Services\SystemDateTimeService.cs" />
+    <Compile Include="LogExtensions.cs" />
+    <Compile Include="Migrations\201203290346011_InitialStructure.cs" />
+    <Compile Include="Migrations\201203290346011_InitialStructure.Designer.cs">
+      <DependentUpon>201203290346011_InitialStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DbConfiguration.cs" />
+    <Compile Include="Infrastructure\Persistence\IDataContext.cs" />
+    <Compile Include="Infrastructure.App\Persistence\DatabaseContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Infrastructure.App\Services\UserRepositoryService.cs" />
+    <Compile Include="StringExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
