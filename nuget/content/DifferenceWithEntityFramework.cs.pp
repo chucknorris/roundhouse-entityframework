@@ -72,6 +72,7 @@ namespace $rootnamespace$
             }
             else if (restoring_the_database)
             {
+                copy_db_local_and_set_restore_path(configuration);
                 configuration.Restore = true;
                 migrator.RunRestore();
             }
@@ -133,6 +134,31 @@ namespace $rootnamespace$
             ConstructorInfo ci = object_type.GetConstructor(new Type[] { });
 
             return (T)ci.Invoke(new object[] { });
+        }
+
+        private void copy_db_local_and_set_restore_path(ConfigurationPropertyHolder configuration)
+        {
+            var originalPath = Path.GetFullPath(configuration.RestoreFromPath);
+            var originalFI = new FileInfo(originalPath);
+            var tempPath = Path.Combine(Path.GetTempPath(), "databases");
+            if (!Directory.Exists(tempPath))
+            {
+                Directory.CreateDirectory(tempPath);
+            }
+            var localPath = Path.Combine(tempPath, Path.GetFileName(originalPath));
+            if (File.Exists(localPath))
+            {
+                var tempFI = new FileInfo(localPath);
+                if (originalFI.Length != tempFI.Length)
+                {
+                    File.Copy(originalPath, localPath, true);
+                }
+            }
+            else
+            {
+                File.Copy(originalPath, localPath, true);
+            }
+            configuration.RestoreFromPath = localPath;
         }
     }
 }
