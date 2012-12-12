@@ -56,7 +56,6 @@ namespace RefreshDatabase
         /// The path to your source control repository. Used only for information sake.
         /// </summary>
         public static string RepositoryPath = "https://github.com/__NAME__/";
-        
 
         /// <summary>
         /// This is the path to the restore file, likely on the network so everyone can get to it
