@@ -57,9 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SolutionVersion.cs">
-      <Link>Properties\SolutionVersion.cs</Link>
-    </Compile>
     <Compile Include="Domain\BaseDomainObject.cs" />
     <Compile Include="Domain\IDomainObject.cs" />
     <Compile Include="Domain\SampleChildObject.cs" />
