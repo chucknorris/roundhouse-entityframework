@@ -75,10 +75,6 @@
     <Compile Include="Infrastructure\Logging\Log4NetLog.cs" />
     <Compile Include="Infrastructure\Services\SystemDateTimeService.cs" />
     <Compile Include="LogExtensions.cs" />
-    <Compile Include="Migrations\201203290346011_InitialStructure.cs" />
-    <Compile Include="Migrations\201203290346011_InitialStructure.Designer.cs">
-      <DependentUpon>201203290346011_InitialStructure.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\DbConfiguration.cs" />
     <Compile Include="Infrastructure\Persistence\IDataContext.cs" />
     <Compile Include="Infrastructure.App\Persistence\DatabaseContext.cs" />

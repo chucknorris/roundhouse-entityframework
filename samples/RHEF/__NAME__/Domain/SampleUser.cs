@@ -15,8 +15,6 @@ namespace __NAME__.Domain
         [MaxLength(255)]
         public string FirstName { get; set; }
         [MaxLength(255)]
-        public string MiddleName { get; set; }
-        [MaxLength(255)]
         public string LastName { get; set; }
         [MaxLength(50)]
         public string Suffix { get; set; }
