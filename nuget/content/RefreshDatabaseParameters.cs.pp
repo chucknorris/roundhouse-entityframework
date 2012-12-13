@@ -1,4 +1,4 @@
-﻿// ==============================================================================
+﻿// ==============================================================================
 // 
 // Fervent Coder Copyright © 2012 - Present - Released under the Apache 2.0 License
 // 
@@ -57,7 +57,6 @@ namespace $rootnamespace$
         /// </summary>
         public static string RepositoryPath = "https://github.com/__NAME__/";
         
-
         /// <summary>
         /// This is the path to the restore file, likely on the network so everyone can get to it
         /// </summary>
@@ -82,6 +81,7 @@ namespace $rootnamespace$
             /// Name of your database - hopefully on your local default instance
             /// </summary>
             public static string Name = "__NAME__";
+            
             /// <summary>
             /// This is the server, it is highly recommended that this is either . or .\SQLExpress
             /// </summary>
