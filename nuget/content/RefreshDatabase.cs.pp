@@ -55,6 +55,10 @@ namespace $rootnamespace$
                 {
                     c.RestoreCustomOptions = RefreshDatabaseParameters.RestoreCustomOptions;
                 }
+				if (RefreshDatabaseParameters.Debug)
+                {
+                    c.Debug = true;
+                }
                 c.Silent = true;
                 c.RecoveryModeSimple = true;
                 c.VersionFile = RefreshDatabaseParameters.MigrationsAssemblyPath;

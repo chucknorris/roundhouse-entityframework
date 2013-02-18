@@ -71,6 +71,11 @@ namespace $rootnamespace$
         /// Add a reference to the migrations assembly. After adding a reference, the file will be in the build directory, so you can just add the name of the dll here.
         /// </summary>
         public static string MigrationsAssemblyPath = @".\__NAME__.dll";
+
+        /// <summary>
+        /// This tells RoundhousE to run in debug mode so that any errors can be checked.
+        /// </summary>
+        public static readonly bool Debug = false;
         
         /// <summary>
         /// The database information
